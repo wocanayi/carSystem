@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>带有效时间的按钮</title>
+    <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+    <script src="resources/js/jquery-3.3.1.js"></script>
+    <script src="resources/js/bootstrap.min.js"></script>
+    <script></script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row" style="margin-top: 15px">
+        <div class="col-sm-6 col-sm-offset-3">
+            <button id="test" class="btn btn-primary">点击获取验证码</button>
+        </div>
+    </div>
+    <div class="row col-md-offset-3 col-md-6" style="margin-top: 15px">
+        <a href="#">badge徽章 <span class="badge">6</span></a>
+    </div>
+    <div class="row col-lg-6 col-lg-offset-3" style="margin-top: 15px">
+        <button class="btn btn-primary" type="button">
+            Messages <span class="badge">9</span>
+        </button>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var waitTime = 60;
+    document.getElementById("test").onclick = function () {
+        time(this);
+    }
+
+    function time(ele) {
+        if (waitTime === 0) {
+            ele.disabled = false;
+            ele.innerHTML = "点击获取验证码";
+            waitTime = 60;
+        } else {
+            ele.disabled = true;
+            ele.innerHTML = waitTime + "秒后重新发送";
+            waitTime--;
+            setTimeout(function () {
+                time(ele);
+            }, 1000);
+        }
+    }
+</script>
+</body>
+</html>
