@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qtt.ssm.city.dao.ICityDao">
+    <resultMap id="cityMap" type="com.qtt.ssm.city.pojo.City">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="pid" column="pid"/>
+    </resultMap>
+
+    <sql id="cityColumn">
+        ${alias}.id, ${alias}.name, ${alias}.pid
+    </sql>
+
+    <!--用于查找pid为0的city-->
+    <select id="selectByPid" resultMap="cityMap">
+        select
+        <include refid="cityColumn">
+            <property name="alias" value="c"/>
+        </include>
+        from rentcar.sys_city c
+        where c.pid = #{pid}
+    </select>
+
+    <!--用于选择所有的city-->
+    <select id="selectAll" resultMap="cityMap">
+        select
+        <include refid="cityColumn">
+            <property name="alias" value="c"/>
+        </include>
+        from rentcar.sys_city c
+    </select>
+
+    <select id="selectByPrimaryKey" resultMap="cityMap">
+        select
+        <include refid="cityColumn">
+            <property name="alias" value="c"/>
+        </include>
+        from rentcar.sys_city c
+        where c.id = #{id, jdbcType = INTEGER}
+    </select>
+</mapper>
