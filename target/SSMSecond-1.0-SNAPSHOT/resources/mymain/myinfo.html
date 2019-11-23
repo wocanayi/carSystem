@@ -105,7 +105,7 @@
     $(function () {
         $.ajax({
             type:"get",
-            url:"/carsys/user/denglu.do",
+            url:"/SSMSecond/user/dengLu",
             dataType:"json",
             success:function(data){
                 //id为0时为父类
@@ -144,7 +144,7 @@
                     ,shade: 0 //不显示遮罩
                     ,yes: function(){
                         $.ajax({
-                            url:"/carsys/user/update.do",
+                            url:"/SSMSecond/user/update",
                             type:"post",
                             data:$("form").serialize(),
                             dataType:'json',

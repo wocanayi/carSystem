@@ -23,4 +23,14 @@ public class UserServiceImpl implements IUserService {
     public void register(User user) {
         userDao.insertSelective(user);
     }
+
+    @Override
+    public User findById(Integer id) {
+        return userDao.findById(id);
+    }
+
+    @Override
+    public void update(User user) {
+        userDao.updateByPrimaryKeySelective(user);
+    }
 }

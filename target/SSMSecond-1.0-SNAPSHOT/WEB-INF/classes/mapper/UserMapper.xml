@@ -14,6 +14,7 @@
         ${alias}.id, ${alias}.tel, ${alias}.password, ${alias}.email, ${alias}.invitation
     </sql>
 
+    <!--用于登录-->
     <select id="findByTel" resultMap="userMap">
         select
         <include refid="userColumn">
@@ -23,6 +24,17 @@
         where u.tel = #{tel}
     </select>
 
+    <!--用于查询用户信息-->
+    <select id="findById" resultMap="userMap">
+        select
+        <include refid="userColumn">
+            <property name="alias" value="u"/>
+        </include>
+        from rentcar.sys_user
+        where id = {id}
+    </select>
+
+    <!--用于注册-->
     <insert id="insertSelective">
         insert into rentcar.sys_user
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -60,5 +72,22 @@
             </if>
         </trim>
     </insert>
+
+    <!--用于修改用户信息-->
+    <update id="updateByPrimaryKeySelective">
+        update rentcar.sys_user
+        <set>
+            <if test="tel != null">
+                tel = #{tel, jdbcType = VARCHAR},
+            </if>
+            <if test="password != null">
+                password = #{password, jdbcType = VARCHAR},
+            </if>
+            <if test="email != null">
+                email = #{email, jdbcType = VARCHAR},
+            </if>
+        </set>
+        where id = #{id, jdbcType = INTEGER}
+    </update>
 
 </mapper>

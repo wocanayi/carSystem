@@ -22,4 +22,8 @@ public interface IUserDao {
      * @param user user
      */
     void insertSelective(User user);
+
+    User findById(Integer id);
+
+    void updateByPrimaryKeySelective(User user);
 }

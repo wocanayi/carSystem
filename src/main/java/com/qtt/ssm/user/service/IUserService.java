@@ -9,4 +9,8 @@ public interface IUserService {
     User findByTel(String tel);
 
     void register(User user);
+
+    User findById(Integer id);
+
+    void update(User user);
 }

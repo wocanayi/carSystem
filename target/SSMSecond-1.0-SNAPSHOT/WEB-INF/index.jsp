@@ -11,6 +11,6 @@
     <title>index</title>
 </head>
 <body>
-<jsp:forward page="${pageContext.request.contextPath}/resources/pagehome/login.html"></jsp:forward>
+<jsp:forward page="${pageContext.request.contextPath}/resources/pagehome/login.html"/>
 </body>
 </html>
