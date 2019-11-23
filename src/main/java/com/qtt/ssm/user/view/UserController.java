@@ -1,9 +1,9 @@
 package com.qtt.ssm.user.view;
 
-import com.qtt.ssm.base.vo.pojo.JsonBean;
+import com.qtt.ssm.base.pojo.JsonBean;
 import com.qtt.ssm.user.pojo.User;
 import com.qtt.ssm.user.service.IUserService;
-import com.qtt.ssm.user.utils.JsonUtils;
+import com.qtt.ssm.base.utils.JsonUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

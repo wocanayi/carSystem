@@ -1,4 +1,4 @@
-package com.qtt.ssm.base.vo.view;
+package com.qtt.ssm.base.view;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

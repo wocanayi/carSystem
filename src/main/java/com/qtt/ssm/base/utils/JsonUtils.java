@@ -1,6 +1,6 @@
-package com.qtt.ssm.user.utils;
+package com.qtt.ssm.base.utils;
 
-import com.qtt.ssm.base.vo.pojo.JsonBean;
+import com.qtt.ssm.base.pojo.JsonBean;
 
 /**
  * @author XC

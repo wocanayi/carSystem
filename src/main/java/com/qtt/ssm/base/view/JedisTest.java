@@ -1,3 +1,5 @@
+package com.qtt.ssm.base.view;
+
 import org.junit.Test;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;

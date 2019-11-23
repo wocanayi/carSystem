@@ -127,13 +127,6 @@
 
             </div>
 
-
-
-
-
-
-
-
             <div class="layui-tab-item">
 
 
@@ -210,7 +203,7 @@
         var getid = window.location.search;
         $.ajax({
         type:"get",
-        url:"/carsys/city/citys.do"+getid,
+        url:"/SSMSecond/city/citys"+getid,
             dataType:"json",
             success:function(data){
                 if(data.code==1) {
@@ -235,7 +228,7 @@
         var getid = window.location.search;
         $.ajax({
             type:"get",
-            url:"/carsys/car/price.do"+getid,
+            url:"/SSMSecond/car/price.do"+getid,
             dataType:"json",
             success:function(data){
                 if(data.code==1) {
@@ -257,7 +250,7 @@
         var getid = window.location.search;
         $.ajax({
             type:"get",
-            url:"/carsys/car/number.do"+getid,
+            url:"/SSMSecond/car/number.do"+getid,
             dataType:"json",
             success:function(data){
                 if(data.code==1) {

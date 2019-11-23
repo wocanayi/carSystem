@@ -1,4 +1,4 @@
-package com.qtt.ssm.base.vo.pojo;
+package com.qtt.ssm.base.pojo;
 
 /**
  * @author XC
