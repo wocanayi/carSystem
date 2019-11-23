@@ -47,16 +47,16 @@
                 #{id, jdbcType = INTEGER},
             </if>
             <if test="tel != null">
-                #{tel, jdbc = VARCHAR},
+                #{tel, jdbcType = VARCHAR},
             </if>
             <if test="password != null">
-                #{password, jdbc = VARCHAR},
+                #{password, jdbcType = VARCHAR},
             </if>
             <if test="email != null">
-                #{email, jdbc = VARCHAR},
+                #{email, jdbcType = VARCHAR},
             </if>
             <if test="invitation != null">
-                #{invitation, jdbc = VARCHAR},
+                #{invitation, jdbcType = VARCHAR},
             </if>
         </trim>
     </insert>

@@ -14,6 +14,7 @@
         ${alias}.id, ${alias}.tel, ${alias}.password, ${alias}.email, ${alias}.invitation
     </sql>
 
+    <!--登录……用到了此方法-->
     <select id="findByTel" resultMap="userMap">
         select
         <include refid="userColumn">
@@ -23,6 +24,7 @@
         where u.tel = #{tel}
     </select>
 
+    <!--注册……用到了此方法-->
     <insert id="insertSelective">
         insert into rentcar.sys_user
         <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -47,16 +49,16 @@
                 #{id, jdbcType = INTEGER},
             </if>
             <if test="tel != null">
-                #{tel, jdbc = VARCHAR},
+                #{tel, jdbcType = VARCHAR},
             </if>
             <if test="password != null">
-                #{password, jdbc = VARCHAR},
+                #{password, jdbcType = VARCHAR},
             </if>
             <if test="email != null">
-                #{email, jdbc = VARCHAR},
+                #{email, jdbcType = VARCHAR},
             </if>
             <if test="invitation != null">
-                #{invitation, jdbc = VARCHAR},
+                #{invitation, jdbcType = VARCHAR},
             </if>
         </trim>
     </insert>
