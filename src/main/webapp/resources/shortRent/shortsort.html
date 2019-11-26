@@ -228,7 +228,7 @@
         var getid = window.location.search;
         $.ajax({
             type:"get",
-            url:"/SSMSecond/car/price.do"+getid,
+            url:"/SSMSecond/car/price"+getid,
             dataType:"json",
             success:function(data){
                 if(data.code==1) {
@@ -250,7 +250,7 @@
         var getid = window.location.search;
         $.ajax({
             type:"get",
-            url:"/SSMSecond/car/number.do"+getid,
+            url:"/SSMSecond/car/number"+getid,
             dataType:"json",
             success:function(data){
                 if(data.code==1) {

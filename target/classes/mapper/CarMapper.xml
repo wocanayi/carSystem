@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.qtt.ssm.car.dao.ICarDao">
+    <resultMap id="carMap" type="com.qtt.ssm.car.pojo.Car">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="type" column="type"/>
+        <result property="sitNum" column="sitnum"/>
+        <result property="cid" column="cid"/>
+        <result property="price" column="price"/>
+        <result property="number" column="number"/>
+        <result property="picture" column="picture"/>
+    </resultMap>
+
+    <sql id="carColumn">
+        ${alias}.id, ${alias}.name, ${alias}.type, ${alias}.sitnum,
+        ${alias}.cid, ${alias}.price, ${alias}.number, ${alias}.picture
+    </sql>
+
+    <select id="findByPrice" resultMap="carMap">
+        select
+        <include refid="carColumn">
+            <property name="alias" value="c"/>
+        </include>
+        from rentcar.sys_car c
+        where c.cid = #{cid}
+        order by c.price desc
+    </select>
+
+    <select id="findByNum" resultMap="carMap">
+        select
+        <include refid="carColumn">
+            <property name="alias" value="c"/>
+        </include>
+        from rentcar.sys_car c
+        where c.cid = #{cid}
+        order by c.number desc
+    </select>
+
+    <select id="findById" resultMap="carMap">
+        select
+        <include refid="carColumn">
+            <property name="alias" value="c"/>
+        </include>
+        from rentcar.sys_car c
+        where c.cid = #{cid}
+    </select>
+</mapper>

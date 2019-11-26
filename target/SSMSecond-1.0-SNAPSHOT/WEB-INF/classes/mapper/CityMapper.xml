@@ -31,6 +31,7 @@
         from rentcar.sys_city c
     </select>
 
+    <!--根据id查找city-->
     <select id="selectByPrimaryKey" resultMap="cityMap">
         select
         <include refid="cityColumn">

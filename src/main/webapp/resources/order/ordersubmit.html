@@ -137,7 +137,7 @@
             var getid = window.location.search;
             $.ajax({
                 type:"get",
-                url:"/carsys/city/citys.do"+getid,
+                url:"/SSMSecond/city/citys"+getid,
                 dataType:"json",
                 success:function(data){
                     if(data.code==1) {
@@ -161,7 +161,7 @@
             var getid = window.location.search;
             $.ajax({
                 type:"get",
-                url:"/carsys/car/findcar.do"+getid,
+                url:"/SSMSecond/car/findCar"+getid,
                 dataType:"json",
                 success:function(data){
                     if(data.code==1) {
@@ -185,7 +185,7 @@
             var total = $("#total").html();
             $.ajax({
                 type:"get",
-                url:"/carsys/order/add.do"+id + "&oprice="+ total,
+                url:"/SSMSecond/order/add"+id + "&oprice="+ total,
                 dataType:"json",
                 success:function(data){
                         alert(data.info);
